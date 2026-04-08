@@ -18,7 +18,7 @@ LSP support in Qwen Code works by connecting to language servers that understand
 LSP is an experimental feature in Qwen Code. To enable it, use the `--experimental-lsp` command line flag:
 
 ```bash
-qwen --experimental-lsp
+qwen-custom --experimental-lsp
 ```
 
 LSP servers are configuration-driven. You must define them in `.lsp.json` (or via extensions) for Qwen Code to start them.
@@ -360,7 +360,7 @@ You can override trust requirements for specific servers in their configuration:
 Enable debug logging to see LSP communication:
 
 ```bash
-DEBUG=lsp* qwen --experimental-lsp
+DEBUG=lsp* qwen-custom --experimental-lsp
 ```
 
 Or check the LSP debugging guide at `packages/cli/LSP_DEBUGGING_GUIDE.md`.
@@ -401,7 +401,7 @@ Claude Code LSP plugins can also supply `lspServers` in `plugin.json` (or a refe
 Use the `--experimental-lsp` flag when starting Qwen Code:
 
 ```bash
-qwen --experimental-lsp
+qwen-custom --experimental-lsp
 ```
 
 ### Q: How do I know which language servers are running?

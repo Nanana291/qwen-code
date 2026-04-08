@@ -44,7 +44,7 @@ export default {
         'slide-up': 'slide-up 200ms ease-out both',
       },
       colors: {
-        qwen: {
+        qwen-custom: {
           orange: '#615fff',
           'clay-orange': '#4f46e5',
           ivory: '#f5f5ff',

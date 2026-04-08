@@ -213,10 +213,10 @@ export interface QueryOptions {
    * If not provided, the SDK automatically uses the bundled CLI included in the package.
    *
    * Supports multiple formats:
-   * - Command name (no path separators): `'qwen'` -> executes from PATH
+   * - Command name (no path separators): `'qwen-custom'` -> executes from PATH
    * - JavaScript file: `'/path/to/cli.js'` -> uses Node.js (or Bun if running under Bun)
    * - TypeScript file: `'/path/to/index.ts'` -> uses tsx if available (silent support for dev/debug)
-   * - Native binary: `'/path/to/qwen'` -> executes directly
+   * - Native binary: `'/path/to/qwen-custom'` -> executes directly
    *
    * Runtime detection:
    * - `.js/.mjs/.cjs` files: Node.js (or Bun if running under Bun)
@@ -225,7 +225,7 @@ export interface QueryOptions {
    * - Other files: executed as native binaries
    *
    * @example '/path/to/cli.js'
-   * @example 'qwen'
+   * @example 'qwen-custom'
    * @example './packages/cli/index.ts'
    */
   pathToQwenExecutable?: string;

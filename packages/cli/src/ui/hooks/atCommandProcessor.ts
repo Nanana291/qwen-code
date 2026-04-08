@@ -164,7 +164,7 @@ export async function handleAtCommand({
   const contentLabelsForDisplay: string[] = [];
   const ignoredByReason: Record<string, string[]> = {
     git: [],
-    qwen: [],
+    qwen-custom: [],
     both: [],
   };
 

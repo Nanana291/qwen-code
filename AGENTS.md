@@ -109,7 +109,7 @@ npm run bundle
 npm start
 
 # Or after global installation
-qwen
+qwen-custom
 
 # Debug mode
 npm run debug
@@ -245,7 +245,7 @@ npx react-devtools@4.28.5
 ### Sandbox Debugging
 
 ```bash
-DEBUG=1 qwen
+DEBUG=1 qwen-custom
 ```
 
 ## Documentation

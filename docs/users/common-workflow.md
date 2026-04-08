@@ -19,7 +19,7 @@ cd /path/to/project
 **2. Start Qwen Code**
 
 ```bash
-qwen
+qwen-custom
 ```
 
 **3. Ask for a high-level overview**
@@ -339,7 +339,7 @@ Qwen Code provides two options for resuming previous conversations:
 **1. Continue the most recent conversation**
 
 ```bash
-qwen --continue
+qwen-custom --continue
 ```
 
 This immediately resumes your most recent conversation without any prompts.
@@ -347,7 +347,7 @@ This immediately resumes your most recent conversation without any prompts.
 **2. Continue in non-interactive mode**
 
 ```bash
-qwen --continue --p "Continue with my task"
+qwen-custom --continue --p "Continue with my task"
 ```
 
 Use `--print` with `--continue` to resume the most recent conversation in non-interactive mode, perfect for scripts or automation.
@@ -355,7 +355,7 @@ Use `--print` with `--continue` to resume the most recent conversation in non-in
 **3. Show conversation picker**
 
 ```bash
-qwen --resume
+qwen-custom --resume
 ```
 
 This displays an interactive conversation selector with a clean list view showing:
@@ -384,16 +384,16 @@ Use arrow keys to navigate and press Enter to select a conversation. Press Esc t
 >
 > ```bash
 > # Continue most recent conversation
-> qwen --continue
+> qwen-custom --continue
 >
 > # Continue most recent conversation with a specific prompt
-> qwen --continue --p "Show me our progress"
+> qwen-custom --continue --p "Show me our progress"
 >
 > # Show conversation picker
-> qwen --resume
+> qwen-custom --resume
 >
 > # Continue most recent conversation in non-interactive mode
-> qwen --continue --p "Run the tests again"
+> qwen-custom --continue --p "Run the tests again"
 > ```
 
 ## Run parallel Qwen Code sessions with Git worktrees
@@ -423,14 +423,14 @@ This creates a new directory with a separate working copy of your repository.
 cd ../project-feature-a
 
 # Run Qwen Code in this isolated environment
-qwen
+qwen-custom
 ```
 
 **4. Run Qwen Code in another worktree**
 
 ```bash
 cd ../project-bugfix
-qwen
+qwen-custom
 ```
 
 **5. Manage your worktrees**
@@ -469,7 +469,7 @@ Suppose you want to use Qwen Code as a linter or code reviewer.
     ...
     "scripts": {
         ...
-        "lint:Qwen Code": "qwen -p 'you are a linter. please look at the changes vs. main and report any issues related to typos. report the filename and line number on one line, and a description of the issue on the second line. do not return any other text.'"
+        "lint:Qwen Code": "qwen-custom -p 'you are a linter. please look at the changes vs. main and report any issues related to typos. report the filename and line number on one line, and a description of the issue on the second line. do not return any other text.'"
     }
 }
 ```
@@ -487,7 +487,7 @@ Suppose you want to pipe data into Qwen Code, and get back data in a structured 
 **Pipe data through Qwen Code:**
 
 ```bash
-cat build-error.txt | qwen -p 'concisely explain the root cause of this build error' > output.txt
+cat build-error.txt | qwen-custom -p 'concisely explain the root cause of this build error' > output.txt
 ```
 
 > [!tip]
@@ -503,7 +503,7 @@ Suppose you need Qwen Code's output in a specific format, especially when integr
 **1. Use text format (default)**
 
 ```bash
-cat data.txt | qwen -p 'summarize this data' --output-format text > summary.txt
+cat data.txt | qwen-custom -p 'summarize this data' --output-format text > summary.txt
 ```
 
 This outputs just Qwen Code's plain text response (default behavior).
@@ -511,7 +511,7 @@ This outputs just Qwen Code's plain text response (default behavior).
 **2. Use JSON format**
 
 ```bash
-cat code.py | qwen -p 'analyze this code for bugs' --output-format json > analysis.json
+cat code.py | qwen-custom -p 'analyze this code for bugs' --output-format json > analysis.json
 ```
 
 This outputs a JSON array of messages with metadata including cost and duration.
@@ -519,7 +519,7 @@ This outputs a JSON array of messages with metadata including cost and duration.
 **3. Use streaming JSON format**
 
 ```bash
-cat log.txt | qwen -p 'parse this log file for errors' --output-format stream-json
+cat log.txt | qwen-custom -p 'parse this log file for errors' --output-format stream-json
 ```
 
 This outputs a series of JSON objects in real-time as Qwen Code processes the request. Each message is a valid JSON object, but the entire output is not valid JSON if concatenated.

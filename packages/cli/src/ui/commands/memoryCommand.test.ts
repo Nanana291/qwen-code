@@ -230,7 +230,7 @@ describe('memoryCommand', () => {
       setGeminiMdFilename(['QWEN.md', 'AGENTS.md']);
       vi.spyOn(process, 'cwd').mockReturnValue('/test/project');
       mockReadFile.mockImplementation(async (filePath: string) => {
-        if (filePath.endsWith('QWEN.md')) return 'qwen memory';
+        if (filePath.endsWith('QWEN.md')) return 'qwen-custom memory';
         if (filePath.endsWith('AGENTS.md')) return 'agents memory';
         throw new Error('ENOENT');
       });
@@ -246,7 +246,7 @@ describe('memoryCommand', () => {
         'utf-8',
       );
       const addItemCall = (mockContext.ui.addItem as Mock).mock.calls[0][0];
-      expect(addItemCall.text).toContain('qwen memory');
+      expect(addItemCall.text).toContain('qwen-custom memory');
       expect(addItemCall.text).toContain('agents memory');
     });
 
@@ -259,7 +259,7 @@ describe('memoryCommand', () => {
       setGeminiMdFilename(['QWEN.md', 'AGENTS.md']);
       vi.spyOn(os, 'homedir').mockReturnValue('/home/user');
       mockReadFile.mockImplementation(async (filePath: string) => {
-        if (filePath.endsWith('QWEN.md')) return 'global qwen memory';
+        if (filePath.endsWith('QWEN.md')) return 'global qwen-custom memory';
         if (filePath.endsWith('AGENTS.md')) return 'global agents memory';
         throw new Error('ENOENT');
       });
@@ -275,7 +275,7 @@ describe('memoryCommand', () => {
         'utf-8',
       );
       const addItemCall = (mockContext.ui.addItem as Mock).mock.calls[0][0];
-      expect(addItemCall.text).toContain('global qwen memory');
+      expect(addItemCall.text).toContain('global qwen-custom memory');
       expect(addItemCall.text).toContain('global agents memory');
     });
   });

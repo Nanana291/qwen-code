@@ -4,7 +4,7 @@ You can extend the channel system with custom platform adapters packaged as [ext
 
 ## How It Works
 
-Channel plugins are loaded at startup from active extensions. When `qwen channel start` runs, it:
+Channel plugins are loaded at startup from active extensions. When `qwen-custom channel start` runs, it:
 
 1. Scans all enabled extensions for `channels` entries in their `qwen-extension.json`
 2. Dynamically imports each channel's entry point
@@ -19,10 +19,10 @@ Install an extension that provides a channel plugin:
 
 ```bash
 # From a local path (for development or private plugins)
-qwen extensions install /path/to/my-channel-extension
+qwen-custom extensions install /path/to/my-channel-extension
 
 # Or link it for development (changes are reflected immediately)
-qwen extensions link /path/to/my-channel-extension
+qwen-custom extensions link /path/to/my-channel-extension
 ```
 
 ## Configuring a Custom Channel
@@ -63,10 +63,10 @@ See [Overview](./overview) for details on each option.
 
 ```bash
 # Start all channels including custom ones
-qwen channel start
+qwen-custom channel start
 
 # Start just your custom channel
-qwen channel start my-bot
+qwen-custom channel start my-bot
 ```
 
 ## What You Get for Free

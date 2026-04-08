@@ -6,7 +6,7 @@
 
 ## Overview
 
-A **channel** connects an external messaging platform to a Qwen Code agent. Configured in `settings.json`, managed via `qwen channel` subcommands, multi-user (each user gets an isolated ACP session).
+A **channel** connects an external messaging platform to a Qwen Code agent. Configured in `settings.json`, managed via `qwen-custom channel` subcommands, multi-user (each user gets an isolated ACP session).
 
 ## Architecture
 
@@ -111,7 +111,7 @@ External plugins are **extensions** managed by `ExtensionManager`, declared in `
 }
 ```
 
-Loading sequence at `qwen channel start`: load settings → register built-ins → scan extensions → dynamic import + validate → register (reject collisions) → validate config → `createChannel()` → `connect()`.
+Loading sequence at `qwen-custom channel start`: load settings → register built-ins → scan extensions → dynamic import + validate → register (reject collisions) → validate config → `createChannel()` → `connect()`.
 
 Plugins run in-process (no sandbox), same trust model as npm dependencies.
 
@@ -142,17 +142,17 @@ Auth is plugin-specific: static token (Telegram), app credentials (DingTalk), QR
 
 ```bash
 # Channels
-qwen channel start [name]                     # start all or one channel
-qwen channel stop                             # stop running service
-qwen channel status                           # show channels, sessions, uptime
-qwen channel pairing list <ch>                # pending pairing requests
-qwen channel pairing approve <ch> <code>      # approve a request
+qwen-custom channel start [name]                     # start all or one channel
+qwen-custom channel stop                             # stop running service
+qwen-custom channel status                           # show channels, sessions, uptime
+qwen-custom channel pairing list <ch>                # pending pairing requests
+qwen-custom channel pairing approve <ch> <code>      # approve a request
 
 # Extensions
-qwen extensions install <path-or-package>     # install
-qwen extensions link <local-path>             # symlink for dev
-qwen extensions list                          # show installed
-qwen extensions remove <name>                 # uninstall
+qwen-custom extensions install <path-or-package>     # install
+qwen-custom extensions link <local-path>             # symlink for dev
+qwen-custom extensions list                          # show installed
+qwen-custom extensions remove <name>                 # uninstall
 ```
 
 ## Package Structure
@@ -185,8 +185,8 @@ packages/channels/
 
 ### Operational Tooling
 
-- **`qwen channel doctor`** — config validation, env vars, bot tokens, network checks
-- **`qwen channel status --probe`** — real connectivity checks per channel
+- **`qwen-custom channel doctor`** — config validation, env vars, bot tokens, network checks
+- **`qwen-custom channel status --probe`** — real connectivity checks per channel
 
 ### Platform Expansion
 
@@ -201,4 +201,4 @@ packages/channels/
 ### Plugin Ecosystem
 
 - **Community plugin template** — `create-qwen-channel` scaffolding tool
-- **Plugin registry/discovery** — `qwen extensions search`, version compatibility
+- **Plugin registry/discovery** — `qwen-custom extensions search`, version compatibility

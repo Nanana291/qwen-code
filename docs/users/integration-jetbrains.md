@@ -53,8 +53,8 @@
 ```json
 {
   "agent_servers": {
-    "qwen": {
-      "command": "/path/to/qwen",
+    "qwen-custom": {
+      "command": "/path/to/qwen-custom",
       "args": ["--acp"],
       "env": {}
     }
@@ -70,12 +70,12 @@
 
 ### Agent not appearing
 
-- Run `qwen --version` in terminal to verify installation
+- Run `qwen-custom --version` in terminal to verify installation
 - Ensure your JetBrains IDE version supports ACP
 - Restart your JetBrains IDE
 
 ### Qwen Code not responding
 
 - Check your internet connection
-- Verify CLI works by running `qwen` in terminal
+- Verify CLI works by running `qwen-custom` in terminal
 - [File an issue on GitHub](https://github.com/qwenlm/qwen-code/issues) if the problem persists

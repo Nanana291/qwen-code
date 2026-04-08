@@ -65,10 +65,10 @@ Or define them in the `env` section of `settings.json`:
 
 ```bash
 # Start only the DingTalk channel
-qwen channel start my-dingtalk
+qwen-custom channel start my-dingtalk
 
 # Or start all configured channels together
-qwen channel start
+qwen-custom channel start
 ```
 
 Open DingTalk and send a message to the bot. You should see a 👀 emoji reaction appear while the agent processes, followed by the response.
@@ -115,7 +115,7 @@ You can send photos and documents to the bot, not just text.
 ### Bot doesn't connect
 
 - Verify your AppKey and AppSecret are correct
-- Check that the environment variables are set before running `qwen channel start`
+- Check that the environment variables are set before running `qwen-custom channel start`
 - Make sure **Stream Mode** is enabled in the bot's settings on the DingTalk Developer Portal
 - Check the terminal output for connection errors
 

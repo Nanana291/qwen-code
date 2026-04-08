@@ -6,7 +6,7 @@ Extensions and plugins from [Gemini CLI Extensions Gallery](https://geminicli.co
 
 ## Extension management
 
-We offer a suite of extension management tools using both `qwen extensions` CLI commands and `/extensions` slash commands within the interactive CLI.
+We offer a suite of extension management tools using both `qwen-custom extensions` CLI commands and `/extensions` slash commands within the interactive CLI.
 
 ### Runtime Extension Management (Slash Commands)
 
@@ -20,36 +20,36 @@ You can manage extensions at runtime within the interactive CLI using `/extensio
 
 ### CLI Extension Management
 
-You can also manage extensions using `qwen extensions` CLI commands. Note that changes made via CLI commands will be reflected in active CLI sessions on restart.
+You can also manage extensions using `qwen-custom extensions` CLI commands. Note that changes made via CLI commands will be reflected in active CLI sessions on restart.
 
 ### Installing an extension
 
-You can install an extension using `qwen extensions install` from multiple sources:
+You can install an extension using `qwen-custom extensions install` from multiple sources:
 
 #### From Claude Code Marketplace
 
 Qwen Code also supports plugins from the [Claude Code Marketplace](https://claudemarketplaces.com/). Install from a marketplace and choose a plugin:
 
 ```bash
-qwen extensions install <marketplace-name>
+qwen-custom extensions install <marketplace-name>
 # or
-qwen extensions install <marketplace-github-url>
+qwen-custom extensions install <marketplace-github-url>
 ```
 
 If you want to install a specific plugin, you can use the format with plugin name:
 
 ```bash
-qwen extensions install <marketplace-name>:<plugin-name>
+qwen-custom extensions install <marketplace-name>:<plugin-name>
 # or
-qwen extensions install <marketplace-github-url>:<plugin-name>
+qwen-custom extensions install <marketplace-github-url>:<plugin-name>
 ```
 
 For example, to install the `prompts.chat` plugin from the [f/awesome-chatgpt-prompts](https://claudemarketplaces.com/plugins/f-awesome-chatgpt-prompts) marketplace:
 
 ```bash
-qwen extensions install f/awesome-chatgpt-prompts:prompts.chat
+qwen-custom extensions install f/awesome-chatgpt-prompts:prompts.chat
 # or
-qwen extensions install https://github.com/f/awesome-chatgpt-prompts:prompts.chat
+qwen-custom extensions install https://github.com/f/awesome-chatgpt-prompts:prompts.chat
 ```
 
 Claude plugins are automatically converted to Qwen Code format during installation:
@@ -78,9 +78,9 @@ This command opens the respective marketplace in your default browser, allowing 
 Qwen Code fully supports extensions from the [Gemini CLI Extensions Gallery](https://geminicli.com/extensions/). Simply install them using the git URL:
 
 ```bash
-qwen extensions install <gemini-cli-extension-github-url>
+qwen-custom extensions install <gemini-cli-extension-github-url>
 # or
-qwen extensions install <owner>/<repo>
+qwen-custom extensions install <owner>/<repo>
 ```
 
 Gemini extensions are automatically converted to Qwen Code format during installation:
@@ -95,13 +95,13 @@ Qwen Code supports installing extensions from npm registries using scoped packag
 
 ```bash
 # Install the latest version
-qwen extensions install @scope/my-extension
+qwen-custom extensions install @scope/my-extension
 
 # Install a specific version
-qwen extensions install @scope/my-extension@1.2.0
+qwen-custom extensions install @scope/my-extension@1.2.0
 
 # Install from a custom registry
-qwen extensions install @scope/my-extension --registry https://your-registry.com
+qwen-custom extensions install @scope/my-extension --registry https://your-registry.com
 ```
 
 Only scoped packages (`@scope/package-name`) are supported to avoid ambiguity with the `owner/repo` GitHub shorthand format.
@@ -120,7 +120,7 @@ Only scoped packages (`@scope/package-name`) are supported to avoid ambiguity wi
 #### From Git Repository
 
 ```bash
-qwen extensions install https://github.com/github/github-mcp-server
+qwen-custom extensions install https://github.com/github/github-mcp-server
 ```
 
 This will install the github mcp server extension.
@@ -128,39 +128,39 @@ This will install the github mcp server extension.
 #### From Local Path
 
 ```bash
-qwen extensions install /path/to/your/extension
+qwen-custom extensions install /path/to/your/extension
 ```
 
-Note that we create a copy of the installed extension, so you will need to run `qwen extensions update` to pull in changes from both locally-defined extensions and those on GitHub.
+Note that we create a copy of the installed extension, so you will need to run `qwen-custom extensions update` to pull in changes from both locally-defined extensions and those on GitHub.
 
 ### Uninstalling an extension
 
-To uninstall, run `qwen extensions uninstall extension-name`, so, in the case of the install example:
+To uninstall, run `qwen-custom extensions uninstall extension-name`, so, in the case of the install example:
 
 ```
-qwen extensions uninstall qwen-cli-security
+qwen-custom extensions uninstall qwen-cli-security
 ```
 
 ### Disabling an extension
 
 Extensions are, by default, enabled across all workspaces. You can disable an extension entirely or for specific workspace.
 
-For example, `qwen extensions disable extension-name` will disable the extension at the user level, so it will be disabled everywhere. `qwen extensions disable extension-name --scope=workspace` will only disable the extension in the current workspace.
+For example, `qwen-custom extensions disable extension-name` will disable the extension at the user level, so it will be disabled everywhere. `qwen-custom extensions disable extension-name --scope=workspace` will only disable the extension in the current workspace.
 
 ### Enabling an extension
 
-You can enable extensions using `qwen extensions enable extension-name`. You can also enable an extension for a specific workspace using `qwen extensions enable extension-name --scope=workspace` from within that workspace.
+You can enable extensions using `qwen-custom extensions enable extension-name`. You can also enable an extension for a specific workspace using `qwen-custom extensions enable extension-name --scope=workspace` from within that workspace.
 
 This is useful if you have an extension disabled at the top-level and only enabled in specific places.
 
 ### Updating an extension
 
-For extensions installed from a local path, a git repository, or an npm registry, you can explicitly update to the latest version with `qwen extensions update extension-name`. For npm extensions installed without a version pin (e.g. `@scope/pkg`), updates check the `latest` dist-tag. For those installed with a specific dist-tag (e.g. `@scope/pkg@beta`), updates track that tag. Extensions pinned to an exact version (e.g. `@scope/pkg@1.2.0`) are always considered up-to-date.
+For extensions installed from a local path, a git repository, or an npm registry, you can explicitly update to the latest version with `qwen-custom extensions update extension-name`. For npm extensions installed without a version pin (e.g. `@scope/pkg`), updates check the `latest` dist-tag. For those installed with a specific dist-tag (e.g. `@scope/pkg@beta`), updates track that tag. Extensions pinned to an exact version (e.g. `@scope/pkg@1.2.0`) are always considered up-to-date.
 
 You can update all extensions with:
 
 ```
-qwen extensions update --all
+qwen-custom extensions update --all
 ```
 
 ## How it works
@@ -223,30 +223,30 @@ The `qwen-extension.json` file contains the configuration for the extension. The
 
 ### Managing Extension Settings
 
-Extensions can require configuration through settings (such as API keys or credentials). These settings can be managed using the `qwen extensions settings` CLI command:
+Extensions can require configuration through settings (such as API keys or credentials). These settings can be managed using the `qwen-custom extensions settings` CLI command:
 
 **Set a setting value:**
 
 ```bash
-qwen extensions settings set <extension-name> <setting-name> [--scope user|workspace]
+qwen-custom extensions settings set <extension-name> <setting-name> [--scope user|workspace]
 ```
 
 **List all settings for an extension:**
 
 ```bash
-qwen extensions settings list <extension-name>
+qwen-custom extensions settings list <extension-name>
 ```
 
 **View current values (user and workspace):**
 
 ```bash
-qwen extensions settings show <extension-name> <setting-name>
+qwen-custom extensions settings show <extension-name> <setting-name>
 ```
 
 **Remove a setting value:**
 
 ```bash
-qwen extensions settings unset <extension-name> <setting-name> [--scope user|workspace]
+qwen-custom extensions settings unset <extension-name> <setting-name> [--scope user|workspace]
 ```
 
 Settings can be configured at two levels:

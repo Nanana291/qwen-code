@@ -507,7 +507,7 @@ When you configure a model without using `modelProviders`, Qwen Code automatical
 
 ```bash
 # This creates a RuntimeModelSnapshot with ID: $runtime|openai|my-custom-model
-qwen --auth-type openai --model my-custom-model --openaiApiKey $KEY --openaiBaseUrl https://api.example.com/v1
+qwen-custom --auth-type openai --model my-custom-model --openaiApiKey $KEY --openaiBaseUrl https://api.example.com/v1
 ```
 
 The snapshot:

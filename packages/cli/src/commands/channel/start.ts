@@ -132,7 +132,7 @@ function checkDuplicateInstance(): void {
     writeStderrLine(
       `Error: Channel service is already running (PID ${existing.pid}, started ${existing.startedAt}).`,
     );
-    writeStderrLine('Use "qwen channel stop" to stop it first.');
+    writeStderrLine('Use "qwen-custom channel stop" to stop it first.');
     process.exit(1);
   }
 }

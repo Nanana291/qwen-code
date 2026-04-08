@@ -1120,8 +1120,8 @@ export default {
   servers: 'Server',
   'Add MCP servers to your settings to get started.':
     'Fügen Sie MCP-Server zu Ihren Einstellungen hinzu, um zu beginnen.',
-  'Run qwen --debug to see error logs':
-    'Führen Sie qwen --debug aus, um Fehlerprotokolle anzuzeigen',
+  'Run qwen-custom --debug to see error logs':
+    'Führen Sie qwen-custom --debug aus, um Fehlerprotokolle anzuzeigen',
 
   // MCP OAuth Authentication
   'OAuth Authentication': 'OAuth-Authentifizierung',
@@ -1768,8 +1768,8 @@ export default {
     'Sie können beliebige Shell-Befehle in Qwen Code mit ! ausführen (z. B. !ls).',
   'Type / to open the command popup; Tab autocompletes slash commands and saved prompts.':
     'Geben Sie / ein, um das Befehlsmenü zu öffnen; Tab vervollständigt Slash-Befehle und gespeicherte Prompts.',
-  'You can resume a previous conversation by running qwen --continue or qwen --resume.':
-    'Sie können eine frühere Unterhaltung mit qwen --continue oder qwen --resume fortsetzen.',
+  'You can resume a previous conversation by running qwen-custom --continue or qwen-custom --resume.':
+    'Sie können eine frühere Unterhaltung mit qwen-custom --continue oder qwen-custom --resume fortsetzen.',
   'You can switch permission mode quickly with Shift+Tab or /approval-mode.':
     'Sie können den Berechtigungsmodus schnell mit Shift+Tab oder /approval-mode wechseln.',
   'You can switch permission mode quickly with Tab or /approval-mode.':
@@ -1933,13 +1933,13 @@ export default {
     '⚠️  Keine Authentifizierungsmethode konfiguriert.\n',
   'Run one of the following commands to get started:\n':
     'Führen Sie einen der folgenden Befehle aus, um zu beginnen:\n',
-  '  qwen auth qwen-oauth     - Authenticate with Qwen OAuth (free tier)':
-    '  qwen auth qwen-oauth     - Mit Qwen OAuth authentifizieren (kostenlos)',
-  '  qwen auth coding-plan      - Authenticate with Alibaba Cloud Coding Plan\n':
-    '  qwen auth coding-plan      - Mit Alibaba Cloud Coding Plan authentifizieren\n',
+  '  qwen-custom auth qwen-oauth     - Authenticate with Qwen OAuth (free tier)':
+    '  qwen-custom auth qwen-oauth     - Mit Qwen OAuth authentifizieren (kostenlos)',
+  '  qwen-custom auth coding-plan      - Authenticate with Alibaba Cloud Coding Plan\n':
+    '  qwen-custom auth coding-plan      - Mit Alibaba Cloud Coding Plan authentifizieren\n',
   'Or simply run:': 'Oder einfach ausführen:',
-  '  qwen auth                - Interactive authentication setup\n':
-    '  qwen auth                - Interaktive Authentifizierungseinrichtung\n',
+  '  qwen-custom auth                - Interactive authentication setup\n':
+    '  qwen-custom auth                - Interaktive Authentifizierungseinrichtung\n',
   '✓ Authentication Method: Qwen OAuth':
     '✓ Authentifizierungsmethode: Qwen OAuth',
   '  Type: Free tier': '  Typ: Kostenlos',
@@ -1957,8 +1957,8 @@ export default {
     '⚠️  Authentifizierungsmethode: Alibaba Cloud Coding Plan (Unvollständig)',
   '  Issue: API key not found in environment or settings\n':
     '  Problem: API-Schlüssel nicht in Umgebung oder Einstellungen gefunden\n',
-  '  Run `qwen auth coding-plan` to re-configure.\n':
-    '  Führen Sie `qwen auth coding-plan` aus, um neu zu konfigurieren.\n',
+  '  Run `qwen-custom auth coding-plan` to re-configure.\n':
+    '  Führen Sie `qwen-custom auth coding-plan` aus, um neu zu konfigurieren.\n',
   '✓ Authentication Method: {{type}}': '✓ Authentifizierungsmethode: {{type}}',
   '  Status: Configured\n': '  Status: Konfiguriert\n',
   'Failed to check authentication status: {{error}}':

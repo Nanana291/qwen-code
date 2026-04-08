@@ -74,8 +74,8 @@ describe('SkillManager', () => {
         return { name: 'regular-skill', description: 'A regular skill' };
       }
       if (yamlString.includes('name: shared-skill')) {
-        const desc = yamlString.includes('From qwen dir')
-          ? 'From qwen dir'
+        const desc = yamlString.includes('From qwen-custom dir')
+          ? 'From qwen-custom dir'
           : yamlString.includes('From agent dir')
             ? 'From agent dir'
             : 'A shared skill';
@@ -548,7 +548,7 @@ Skill 3 content`);
         const pathStr = String(filePath);
         if (pathStr.includes('.qwen') && pathStr.includes('shared-skill')) {
           return Promise.resolve(
-            `---\nname: shared-skill\ndescription: From qwen dir\n---\nQwen content`,
+            `---\nname: shared-skill\ndescription: From qwen-custom dir\n---\nQwen content`,
           );
         }
         if (pathStr.includes('.agents') && pathStr.includes('shared-skill')) {
@@ -567,7 +567,7 @@ Skill 3 content`);
       // Only one instance should remain, from .qwen (first in PROVIDER_CONFIG_DIRS)
       expect(skills).toHaveLength(1);
       expect(skills[0].name).toBe('shared-skill');
-      expect(skills[0].description).toBe('From qwen dir');
+      expect(skills[0].description).toBe('From qwen-custom dir');
     });
 
     it('should handle empty directories', async () => {

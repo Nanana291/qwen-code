@@ -221,7 +221,7 @@ Ensure:
 Run Qwen Code with debug mode to see Skill loading errors:
 
 ```bash
-qwen --debug
+qwen-custom --debug
 ```
 
 ## Share Skills with your team

@@ -57,7 +57,7 @@ describe('CLI Path Utilities', () => {
     it('should throw descriptive error when bundled CLI not found', () => {
       mockFs.existsSync.mockReturnValue(false);
 
-      expect(() => findBundledCliPath()).toThrow('Bundled qwen CLI not found');
+      expect(() => findBundledCliPath()).toThrow('Bundled qwen-custom CLI not found');
       expect(() => findBundledCliPath()).toThrow('Searched locations:');
     });
   });
@@ -84,19 +84,19 @@ describe('CLI Path Utilities', () => {
       it('should throw when bundled CLI not found', () => {
         mockFs.existsSync.mockReturnValue(false);
 
-        expect(() => prepareSpawnInfo()).toThrow('Bundled qwen CLI not found');
+        expect(() => prepareSpawnInfo()).toThrow('Bundled qwen-custom CLI not found');
       });
     });
 
     describe('command name detection', () => {
       it('should detect command names without path separators', () => {
-        const result = prepareSpawnInfo('qwen');
+        const result = prepareSpawnInfo('qwen-custom');
 
         expect(result).toEqual({
-          command: 'qwen',
+          command: 'qwen-custom',
           args: [],
           type: 'native',
-          originalInput: 'qwen',
+          originalInput: 'qwen-custom',
         });
       });
 
@@ -118,7 +118,7 @@ describe('CLI Path Utilities', () => {
       });
 
       it('should accept valid command names', () => {
-        expect(() => prepareSpawnInfo('qwen')).not.toThrow();
+        expect(() => prepareSpawnInfo('qwen-custom')).not.toThrow();
         expect(() => prepareSpawnInfo('qwen-code')).not.toThrow();
         expect(() => prepareSpawnInfo('qwen_code')).not.toThrow();
         expect(() => prepareSpawnInfo('qwen.exe')).not.toThrow();
@@ -333,7 +333,7 @@ describe('CLI Path Utilities', () => {
     });
 
     it('should handle Windows native executables', () => {
-      const windowsPath = 'C:\\Program Files\\qwen\\qwen.exe';
+      const windowsPath = 'C:\\Program Files\\qwen-custom\\qwen.exe';
       const result = prepareSpawnInfo(windowsPath);
 
       // .exe files without .js extension should be treated as native
@@ -386,13 +386,13 @@ describe('CLI Path Utilities', () => {
     });
 
     it('should handle production native binary', () => {
-      const result = prepareSpawnInfo('qwen');
+      const result = prepareSpawnInfo('qwen-custom');
 
       expect(result).toEqual({
-        command: 'qwen',
+        command: 'qwen-custom',
         args: [],
         type: 'native',
-        originalInput: 'qwen',
+        originalInput: 'qwen-custom',
       });
     });
 

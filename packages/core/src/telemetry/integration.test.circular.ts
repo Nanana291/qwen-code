@@ -25,7 +25,7 @@ describe('Circular Reference Integration Test', () => {
     (QwenLogger as any).instance = undefined;
   });
 
-  it('should handle HttpsProxyAgent-like circular references in qwen logging', () => {
+  it('should handle HttpsProxyAgent-like circular references in qwen-custom logging', () => {
     // Create a mock config with proxy
     const mockConfig = {
       getTelemetryEnabled: () => true,

@@ -170,11 +170,11 @@ In addition to the in-session `/auth` slash command, Qwen Code provides standalo
 
 | Command                                              | Description                                       |
 | ---------------------------------------------------- | ------------------------------------------------- |
-| `qwen auth`                                          | Interactive authentication setup                  |
-| `qwen auth qwen-oauth`                               | Authenticate with Qwen OAuth                      |
-| `qwen auth coding-plan`                              | Authenticate with Alibaba Cloud Coding Plan       |
-| `qwen auth coding-plan --region china --key sk-sp-…` | Non-interactive Coding Plan setup (for scripting) |
-| `qwen auth status`                                   | Show current authentication status                |
+| `qwen-custom auth`                                          | Interactive authentication setup                  |
+| `qwen-custom auth qwen-oauth`                               | Authenticate with Qwen OAuth                      |
+| `qwen-custom auth coding-plan`                              | Authenticate with Alibaba Cloud Coding Plan       |
+| `qwen-custom auth coding-plan --region china --key sk-sp-…` | Non-interactive Coding Plan setup (for scripting) |
+| `qwen-custom auth status`                                   | Show current authentication status                |
 
 > [!tip]
 >

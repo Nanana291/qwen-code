@@ -13,7 +13,7 @@ npm install -g @qwen-code/qwen-code
 To verify the installation
 
 ```bash
-qwen --version
+qwen-custom --version
 ```
 
 ## Overview of sandboxing
@@ -65,11 +65,11 @@ The container sandbox mounts your workspace and your `~/.qwen` directory into th
 
 ```bash
 # Enable sandboxing with command flag
-qwen -s -p "analyze the code structure"
+qwen-custom -s -p "analyze the code structure"
 
 # Or enable sandboxing for your shell session (recommended for CI / scripts)
 export QWEN_SANDBOX=true   # true auto-picks a provider (see notes below)
-qwen -p "run the test suite"
+qwen-custom -p "run the test suite"
 
 # Configure in settings.json
 {
@@ -199,7 +199,7 @@ RUN apt-get update && \
 Then rebuild the sandbox image:
 
 ```bash
-QWEN_SANDBOX=docker BUILD_SANDBOX=1 qwen -s
+QWEN_SANDBOX=docker BUILD_SANDBOX=1 qwen-custom -s
 ```
 
 For more details on customizing the sandbox, see [Customizing the sandbox environment](/developers/tools/sandbox).
@@ -212,7 +212,7 @@ For more details on customizing the sandbox, see [Customizing the sandbox enviro
 ### Debug mode
 
 ```bash
-DEBUG=1 qwen -s -p "debug command"
+DEBUG=1 qwen-custom -s -p "debug command"
 ```
 
 **Note:** If you have `DEBUG=true` in a project's `.env` file, it won't affect the CLI due to automatic exclusion. Use `.qwen/.env` files for Qwen Code-specific debug settings.
@@ -221,10 +221,10 @@ DEBUG=1 qwen -s -p "debug command"
 
 ```bash
 # Check environment
-qwen -s -p "run shell command: env | grep SANDBOX"
+qwen-custom -s -p "run shell command: env | grep SANDBOX"
 
 # List mounts
-qwen -s -p "run shell command: mount | grep workspace"
+qwen-custom -s -p "run shell command: mount | grep workspace"
 ```
 
 ## Security notes

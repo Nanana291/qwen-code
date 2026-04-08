@@ -29,7 +29,7 @@ curl -fsSL -o %TEMP%\install-qwen.bat https://qwen-code-assets.oss-cn-hangzhou.a
 
 ```bash
 cd your-project
-qwen
+qwen-custom
 ```
 
 Select **Qwen OAuth (Free)** authentication and follow the prompts to log in. Then let's start with understanding your codebase. Try one of these commands:
@@ -62,4 +62,4 @@ You'll be prompted to log in on first use. That's it! [Continue with Quickstart 
 
 - **Works in your terminal**: Not another chat window. Not another IDE. Qwen Code meets you where you already work, with the tools you already love.
 - **Takes action**: Qwen Code can directly edit files, run commands, and create commits. Need more? [MCP](./features/mcp) lets Qwen Code read your design docs in Google Drive, update your tickets in Jira, or use _your_ custom developer tooling.
-- **Unix philosophy**: Qwen Code is composable and scriptable. `tail -f app.log | qwen -p "Slack me if you see any anomalies appear in this log stream"` _works_. Your CI can run `qwen -p "If there are new text strings, translate them into French and raise a PR for @lang-fr-team to review"`.
+- **Unix philosophy**: Qwen Code is composable and scriptable. `tail -f app.log | qwen-custom -p "Slack me if you see any anomalies appear in this log stream"` _works_. Your CI can run `qwen-custom -p "If there are new text strings, translate them into French and raise a PR for @lang-fr-team to review"`.

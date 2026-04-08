@@ -20,7 +20,7 @@ npm install @qwen-code/channel-plugin-example
 The package ships a `qwen-extension.json` manifest, so it works as an extension out of the box:
 
 ```bash
-qwen extensions link ./node_modules/@qwen-code/channel-plugin-example
+qwen-custom extensions link ./node_modules/@qwen-code/channel-plugin-example
 ```
 
 ### 3. Configure the channel
@@ -58,7 +58,7 @@ HTTP_PORT=8080 WS_PORT=8081 npx qwen-channel-plugin-example-server
 In a separate terminal:
 
 ```bash
-qwen channel start my-plugin-test
+qwen-custom channel start my-plugin-test
 ```
 
 ### 6. Send a message

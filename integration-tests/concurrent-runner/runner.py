@@ -91,7 +91,7 @@ class RunRecord:
     task_name: str
     model: str
     status: RunStatus
-    auth_type: Optional[str] = None  # e.g. "anthropic" for qwen --auth-type
+    auth_type: Optional[str] = None  # e.g. "anthropic" for qwen-custom --auth-type
     worktree_path: Optional[str] = None
     output_dir: Optional[str] = None
     logs_dir: Optional[str] = None
@@ -810,8 +810,8 @@ class QwenRunner:
             run.stderr_file = run.prompt_results[0].stderr_file
 
     def _build_command(self, run: RunRecord, prompt_text: str, use_continue: bool = False) -> List[str]:
-        """Build the qwen CLI command for a single prompt."""
-        cmd = ["qwen"]
+        """Build the qwen-custom CLI command for a single prompt."""
+        cmd = ["qwen-custom"]
 
         # Add model
         cmd.extend(["--model", run.model])

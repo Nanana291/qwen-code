@@ -113,7 +113,7 @@ outputs/
 1. **Generate Matrix**: Create N×M run combinations (tasks × models)
 2. **Create Worktree**: Git worktree add from source repo
 3. **Initialize**: npm install && npm run build
-4. **Execute**: Run qwen CLI with captured output (logs go to run-specific folder)
+4. **Execute**: Run qwen-custom CLI with captured output (logs go to run-specific folder)
 5. **Cleanup**: Remove git worktree (always executed)
 
 ## Status Values
@@ -121,7 +121,7 @@ outputs/
 - `queued`: Waiting to start
 - `preparing`: Creating git worktree
 - `initializing`: Running npm install + build
-- `running`: Executing qwen CLI
+- `running`: Executing qwen-custom CLI
 - `succeeded`: Completed successfully
 - `failed`: Error occurred
 
@@ -130,7 +130,7 @@ outputs/
 - Python 3.10+
 - Git repository (for worktree operations)
 - Node.js and npm (for build step)
-- `qwen` CLI in PATH
+- `qwen-custom` CLI in PATH
 
 ## Exit Codes
 

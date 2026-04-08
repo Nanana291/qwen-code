@@ -211,7 +211,7 @@ export function findBundledCliPath(): string {
 
   const candidates = getBundledCliCandidatePaths();
   throw new Error(
-    'Bundled qwen CLI not found. The CLI should be included in the SDK package.\n' +
+    'Bundled qwen-custom CLI not found. The CLI should be included in the SDK package.\n' +
       'Searched locations:\n' +
       candidates.map((c) => `  - ${c}`).join('\n') +
       '\n\nIf you need to use a custom CLI, provide explicit path:\n' +

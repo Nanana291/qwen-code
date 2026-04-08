@@ -52,7 +52,7 @@ You have two options to set up a workflow:
 1. Start the Qwen Code CLI in your terminal:
 
    ```shell
-   qwen
+   qwen-custom
    ```
 
 2. In Qwen Code CLI in your terminal, type:

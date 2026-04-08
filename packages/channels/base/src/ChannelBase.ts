@@ -431,7 +431,7 @@ export abstract class ChannelBase {
     if (code) {
       await this.sendMessage(
         chatId,
-        `Your pairing code is: ${code}\n\nAsk the bot operator to approve you with:\n  qwen channel pairing approve ${this.name} ${code}`,
+        `Your pairing code is: ${code}\n\nAsk the bot operator to approve you with:\n  qwen-custom channel pairing approve ${this.name} ${code}`,
       );
     } else {
       await this.sendMessage(

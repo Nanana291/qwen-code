@@ -130,7 +130,7 @@ class TransportOptionsAdapter {
                 .orElse(new TransportOptions());
 
         if (StringUtils.isBlank(transportOptions.getPathToQwenExecutable())) {
-            transportOptions.setPathToQwenExecutable("qwen");
+            transportOptions.setPathToQwenExecutable("qwen-custom");
         }
 
         if (StringUtils.isBlank(transportOptions.getCwd())) {

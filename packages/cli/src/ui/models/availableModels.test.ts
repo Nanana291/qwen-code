@@ -77,7 +77,7 @@ describe('availableModels', () => {
       process.env = originalEnv;
     });
 
-    it('should return hard-coded qwen models for qwen-oauth', () => {
+    it('should return hard-coded qwen-custom models for qwen-oauth', () => {
       const models = getAvailableModelsForAuthType(AuthType.QWEN_OAUTH);
       expect(models.length).toBe(1);
       expect(models[0].id).toBe('coder-model');

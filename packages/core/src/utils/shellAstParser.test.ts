@@ -26,7 +26,7 @@ afterAll(() => {
 
 describe('WASM path resolution', () => {
   it('resolveWasmPathForModule: computes correct path when resolvePath returns real CLI path', () => {
-    const symlinkedCliPath = path.join('/usr', 'bin', 'qwen');
+    const symlinkedCliPath = path.join('/usr', 'bin', 'qwen-custom');
     const realCliPath = path.join(
       '/opt',
       'homebrew',
@@ -62,9 +62,9 @@ describe('WASM path resolution', () => {
   });
 
   it('resolveWasmPathForModule: correctly resolves path when realpathSync returns symlink target in same dir as vendor', () => {
-    // Simulate: /usr/bin/qwen (symlink) → /usr/lib/node_modules/.../cli.js (real)
+    // Simulate: /usr/bin/qwen-custom (symlink) → /usr/lib/node_modules/.../cli.js (real)
     // Vendor files live next to cli.js (levelsUp = 0 for bundle case)
-    const symlinkedCliPath = path.join('/usr', 'bin', 'qwen');
+    const symlinkedCliPath = path.join('/usr', 'bin', 'qwen-custom');
     const realCliPath = path.join(
       '/usr',
       'lib',

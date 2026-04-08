@@ -146,9 +146,9 @@ export class AcpConnection {
         message.toLowerCase().includes('error') &&
         !message.includes('Loaded cached')
       ) {
-        console.error(`[ACP qwen]:`, message);
+        console.error(`[ACP qwen-custom]:`, message);
       } else {
-        console.log(`[ACP qwen]:`, message);
+        console.log(`[ACP qwen-custom]:`, message);
       }
     });
 
@@ -158,7 +158,7 @@ export class AcpConnection {
 
     this.child!.on('exit', (code: number | null, signal: string | null) => {
       console.error(
-        `[ACP qwen] Process exited with code: ${code}, signal: ${signal}`,
+        `[ACP qwen-custom] Process exited with code: ${code}, signal: ${signal}`,
       );
       this.lastExitCode = code;
       this.lastExitSignal = signal;

@@ -759,18 +759,18 @@ or, using positional arguments:
 
 When you run this command, the CLI executes the `prompts/get` method on the MCP server with the provided arguments. The server is responsible for substituting the arguments into the prompt template and returning the final prompt text. The CLI then sends this prompt to the model for execution. This provides a convenient way to automate and share common workflows.
 
-## Managing MCP Servers with `qwen mcp`
+## Managing MCP Servers with `qwen-custom mcp`
 
 While you can always configure MCP servers by manually editing your `settings.json` file, the CLI provides a convenient set of commands to manage your server configurations programmatically. These commands streamline the process of adding, listing, and removing MCP servers without needing to directly edit JSON files.
 
-### Adding a Server (`qwen mcp add`)
+### Adding a Server (`qwen-custom mcp add`)
 
 The `add` command configures a new MCP server in your `settings.json`. Based on the scope (`-s, --scope`), it will be added to either the user config `~/.qwen/settings.json` or the project config `.qwen/settings.json` file.
 
 **Command:**
 
 ```bash
-qwen mcp add [options] <name> <commandOrUrl> [args...]
+qwen-custom mcp add [options] <name> <commandOrUrl> [args...]
 ```
 
 - `<name>`: A unique name for the server.
@@ -795,13 +795,13 @@ This is the default transport for running local servers.
 
 ```bash
 # Basic syntax
-qwen mcp add <name> <command> [args...]
+qwen-custom mcp add <name> <command> [args...]
 
 # Example: Adding a local server
-qwen mcp add my-stdio-server -e API_KEY=123 /path/to/server arg1 arg2 arg3
+qwen-custom mcp add my-stdio-server -e API_KEY=123 /path/to/server arg1 arg2 arg3
 
 # Example: Adding a local python server
-qwen mcp add python-server python server.py --port 8080
+qwen-custom mcp add python-server python server.py --port 8080
 ```
 
 #### Adding an HTTP server
@@ -810,13 +810,13 @@ This transport is for servers that use the streamable HTTP transport.
 
 ```bash
 # Basic syntax
-qwen mcp add --transport http <name> <url>
+qwen-custom mcp add --transport http <name> <url>
 
 # Example: Adding an HTTP server
-qwen mcp add --transport http http-server https://api.example.com/mcp/
+qwen-custom mcp add --transport http http-server https://api.example.com/mcp/
 
 # Example: Adding an HTTP server with an authentication header
-qwen mcp add --transport http secure-http https://api.example.com/mcp/ --header "Authorization: Bearer abc123"
+qwen-custom mcp add --transport http secure-http https://api.example.com/mcp/ --header "Authorization: Bearer abc123"
 ```
 
 #### Adding an SSE server
@@ -825,18 +825,18 @@ This transport is for servers that use Server-Sent Events (SSE).
 
 ```bash
 # Basic syntax
-qwen mcp add --transport sse <name> <url>
+qwen-custom mcp add --transport sse <name> <url>
 
 # Example: Adding an SSE server
-qwen mcp add --transport sse sse-server https://api.example.com/sse/
+qwen-custom mcp add --transport sse sse-server https://api.example.com/sse/
 
 # Example: Adding an SSE server with an authentication header
-qwen mcp add --transport sse secure-sse https://api.example.com/sse/ --header "Authorization: Bearer abc123"
+qwen-custom mcp add --transport sse secure-sse https://api.example.com/sse/ --header "Authorization: Bearer abc123"
 ```
 
-### Managing Servers (`qwen mcp`)
+### Managing Servers (`qwen-custom mcp`)
 
-To view and manage all MCP servers currently configured, use the `manage` command or simply `qwen mcp`. This opens an interactive TUI dialog where you can:
+To view and manage all MCP servers currently configured, use the `manage` command or simply `qwen-custom mcp`. This opens an interactive TUI dialog where you can:
 
 - View all MCP servers with their connection status
 - Enable/disable servers
@@ -847,27 +847,27 @@ To view and manage all MCP servers currently configured, use the `manage` comman
 **Command:**
 
 ```bash
-qwen mcp
+qwen-custom mcp
 # or
-qwen mcp manage
+qwen-custom mcp manage
 ```
 
 The management dialog provides a visual interface showing each server's name, configuration details, connection status, and available tools/prompts.
 
-### Removing a Server (`qwen mcp remove`)
+### Removing a Server (`qwen-custom mcp remove`)
 
 To delete a server from your configuration, use the `remove` command with the server's name.
 
 **Command:**
 
 ```bash
-qwen mcp remove <name>
+qwen-custom mcp remove <name>
 ```
 
 **Example:**
 
 ```bash
-qwen mcp remove my-server
+qwen-custom mcp remove my-server
 ```
 
 This will find and delete the "my-server" entry from the `mcpServers` object in the appropriate `settings.json` file based on the scope (`-s, --scope`).

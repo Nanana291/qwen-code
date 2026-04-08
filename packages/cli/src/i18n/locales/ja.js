@@ -856,8 +856,8 @@ export default {
   servers: 'サーバー',
   'Add MCP servers to your settings to get started.':
     '設定にMCPサーバーを追加して開始してください。',
-  'Run qwen --debug to see error logs':
-    'qwen --debug を実行してエラーログを確認してください',
+  'Run qwen-custom --debug to see error logs':
+    'qwen-custom --debug を実行してエラーログを確認してください',
 
   // MCP OAuth Authentication
   'OAuth Authentication': 'OAuth 認証',
@@ -1164,8 +1164,8 @@ export default {
     'Qwen Code から ! を使って任意のシェルコマンドを実行できます（例: !ls）。',
   'Type / to open the command popup; Tab autocompletes slash commands and saved prompts.':
     '/ を入力してコマンドポップアップを開きます。Tab でスラッシュコマンドと保存済みプロンプトを補完できます。',
-  'You can resume a previous conversation by running qwen --continue or qwen --resume.':
-    'qwen --continue または qwen --resume で前の会話を再開できます。',
+  'You can resume a previous conversation by running qwen-custom --continue or qwen-custom --resume.':
+    'qwen-custom --continue または qwen-custom --resume で前の会話を再開できます。',
   'You can switch permission mode quickly with Shift+Tab or /approval-mode.':
     'Shift+Tab または /approval-mode で権限モードをすばやく切り替えられます。',
   'You can switch permission mode quickly with Tab or /approval-mode.':
@@ -1426,13 +1426,13 @@ export default {
     '⚠️  認証方法が設定されていません。\n',
   'Run one of the following commands to get started:\n':
     '以下のコマンドのいずれかを実行して開始してください:\n',
-  '  qwen auth qwen-oauth     - Authenticate with Qwen OAuth (free tier)':
-    '  qwen auth qwen-oauth     - Qwen OAuth で認証（無料）',
-  '  qwen auth coding-plan      - Authenticate with Alibaba Cloud Coding Plan\n':
-    '  qwen auth coding-plan      - Alibaba Cloud Coding Plan で認証\n',
+  '  qwen-custom auth qwen-oauth     - Authenticate with Qwen OAuth (free tier)':
+    '  qwen-custom auth qwen-oauth     - Qwen OAuth で認証（無料）',
+  '  qwen-custom auth coding-plan      - Authenticate with Alibaba Cloud Coding Plan\n':
+    '  qwen-custom auth coding-plan      - Alibaba Cloud Coding Plan で認証\n',
   'Or simply run:': 'または以下を実行:',
-  '  qwen auth                - Interactive authentication setup\n':
-    '  qwen auth                - インタラクティブ認証セットアップ\n',
+  '  qwen-custom auth                - Interactive authentication setup\n':
+    '  qwen-custom auth                - インタラクティブ認証セットアップ\n',
   '✓ Authentication Method: Qwen OAuth': '✓ 認証方法: Qwen OAuth',
   '  Type: Free tier': '  タイプ: 無料プラン',
   '  Limit: Up to 1,000 requests/day': '  制限: 1日最大1,000リクエスト',
@@ -1449,8 +1449,8 @@ export default {
     '⚠️  認証方法: Alibaba Cloud Coding Plan（不完全）',
   '  Issue: API key not found in environment or settings\n':
     '  問題: 環境変数または設定にAPIキーが見つかりません\n',
-  '  Run `qwen auth coding-plan` to re-configure.\n':
-    '  `qwen auth coding-plan` を実行して再設定してください。\n',
+  '  Run `qwen-custom auth coding-plan` to re-configure.\n':
+    '  `qwen-custom auth coding-plan` を実行して再設定してください。\n',
   '✓ Authentication Method: {{type}}': '✓ 認証方法: {{type}}',
   '  Status: Configured\n': '  ステータス: 設定済み\n',
   'Failed to check authentication status: {{error}}':

@@ -273,7 +273,7 @@ Event processing is subject to the timeout settings configured in `TransportOpti
 
 ## Usage Examples
 
-The SDK includes several example files in `src/test/java/com/alibaba/qwen/code/cli/example/` that demonstrate different aspects of the API:
+The SDK includes several example files in `src/test/java/com/alibaba/qwen-custom/code/cli/example/` that demonstrate different aspects of the API:
 
 ### Basic Usage
 
@@ -303,14 +303,14 @@ src/
 │   └── java/
 │       └── com/
 │           └── alibaba/
-│               └── qwen/
+│               └── qwen-custom/
 │                   └── code/
 │                       └── example/
 ├── main/
 │   └── java/
 │       └── com/
 │           └── alibaba/
-│               └── qwen/
+│               └── qwen-custom/
 │                   └── code/
 │                       └── cli/
 │                           ├── QwenCodeCli.java
@@ -322,7 +322,7 @@ src/
     ├── java/
     │   └── com/
     │       └── alibaba/
-    │           └── qwen/
+    │           └── qwen-custom/
     │               └── code/
     │                   └── cli/
     │                       ├── QwenCodeCliTest.java

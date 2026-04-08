@@ -69,13 +69,13 @@ Pass API keys when running Qwen Code:
 
 ```bash
 # Tavily
-qwen --tavily-api-key tvly-xxxxx
+qwen-custom --tavily-api-key tvly-xxxxx
 
 # Google
-qwen --google-api-key your-key --google-search-engine-id your-id
+qwen-custom --google-api-key your-key --google-search-engine-id your-id
 
 # Specify default provider
-qwen --web-search-default tavily
+qwen-custom --web-search-default tavily
 ```
 
 ### Backward Compatibility (Deprecated)
@@ -182,5 +182,5 @@ web_search(query="best practices for React 19", provider="dashscope")
 
 **Need help?**
 
-- Check your configuration: Run `qwen` and use the settings dialog
+- Check your configuration: Run `qwen-custom` and use the settings dialog
 - View your current settings in `~/.qwen-code/settings.json` (macOS/Linux) or `%USERPROFILE%\.qwen-code\settings.json` (Windows)

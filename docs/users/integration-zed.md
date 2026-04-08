@@ -49,7 +49,7 @@ npm install -g @qwen-code/qwen-code
 ```json
 "Qwen Code": {
   "type": "custom",
-  "command": "qwen",
+  "command": "qwen-custom",
   "args": ["--acp"],
   "env": {}
 }
@@ -61,12 +61,12 @@ npm install -g @qwen-code/qwen-code
 
 ### Agent not appearing
 
-- Run `qwen --version` in terminal to verify installation
+- Run `qwen-custom --version` in terminal to verify installation
 - Check that the JSON configuration is valid
 - Restart Zed Editor
 
 ### Qwen Code not responding
 
 - Check your internet connection
-- Verify CLI works by running `qwen` in terminal
+- Verify CLI works by running `qwen-custom` in terminal
 - [File an issue on GitHub](https://github.com/qwenlm/qwen-code/issues) if the problem persists
