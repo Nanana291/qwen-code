@@ -77,7 +77,7 @@ brew install qwen-code
 
 ```bash
 # Start Qwen Code (interactive)
-qwen
+qwen-custom
 
 # Then, in the session:
 /help
@@ -123,7 +123,7 @@ Qwen Code supports two authentication methods:
 
 #### Qwen OAuth (recommended)
 
-Start `qwen`, then run:
+Start `qwen-custom`, then run:
 
 ```bash
 /auth
@@ -191,7 +191,7 @@ Here is a complete example:
 **Step 3:** Start Qwen Code — your configuration takes effect automatically:
 
 ```bash
-qwen
+qwen-custom
 ```
 
 Use the `/model` command at any time to switch between all configured models.
@@ -368,16 +368,16 @@ As an open-source terminal agent, you can use Qwen Code in four primary ways:
 
 ```bash
 cd your-project/
-qwen
+qwen-custom
 ```
 
-Run `qwen` in your project folder to launch the interactive terminal UI. Use `@` to reference local files (for example `@src/main.ts`).
+Run `qwen-custom` in your project folder to launch the interactive terminal UI. Use `@` to reference local files (for example `@src/main.ts`).
 
 #### Headless mode
 
 ```bash
 cd your-project/
-qwen -p "your question"
+qwen-custom -p "your question"
 ```
 
 Use `-p` to run Qwen Code without the interactive UI—ideal for scripts, automation, and CI/CD. Learn more: [Headless mode](https://qwenlm.github.io/qwen-code-docs/en/users/features/headless).

@@ -18,7 +18,7 @@ help:
 	@echo "  make debug            - Start the Qwen Code CLI in debug mode"
 	@echo ""
 	@echo "  make run-npx          - Run the CLI using npx (for testing the published package)"
-	@echo "  make create-alias     - Create a 'qwen' alias for your shell"
+	@echo "  make create-alias     - Create a 'qwen-custom' alias for your shell"
 
 install:
 	npm install

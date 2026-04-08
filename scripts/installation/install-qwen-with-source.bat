@@ -130,14 +130,14 @@ if not "!SOURCE!"=="unknown" (
 )
 
 REM Verify installation
-call :CheckCommandExists qwen
+call :CheckCommandExists qwen-custom
 if %ERRORLEVEL% EQU 0 (
-    echo SUCCESS: Qwen Code is available as 'qwen' command.
-    call qwen --version
+    echo SUCCESS: Qwen Code is available as 'qwen-custom' command.
+    call qwen-custom --version
     echo.
     echo INFO: Starting Qwen Code...
     echo.
-    call qwen
+    call qwen-custom
 ) else (
     echo WARNING: Qwen Code may not be in PATH. Please check your npm global bin directory.
     echo.

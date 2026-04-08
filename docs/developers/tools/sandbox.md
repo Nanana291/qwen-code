@@ -27,17 +27,17 @@ cd packages/cli
 npm link
 
 # 5. Verification link (it should now point to the source code)
-which qwen
-# Expected output: /xxx/xxx/.nvm/versions/node/v24.11.1/bin/qwen
+which qwen-custom
+# Expected output: /xxx/xxx/.nvm/versions/node/v24.11.1/bin/qwen-custom
 # Or similar paths, but it should be a symbolic link
 
 # 6. For details of the symbolic link, you can see the specific source code path
-ls -la $(dirname $(which qwen))/../lib/node_modules/@qwen-code/qwen-code
+ls -la $(dirname $(which qwen-custom))/../lib/node_modules/@qwen-code/qwen-code
 # It should show that this is a symbolic link pointing to your source code directory
 
-# 7.Test the version of qwen
-qwen -v
-# npm link will overwrite the global qwen. To avoid being unable to distinguish the same version number, you can uninstall the global CLI first
+# 7.Test the version of qwen-custom
+qwen-custom -v
+# npm link will overwrite the global qwen-custom. To avoid being unable to distinguish the same version number, you can uninstall the global CLI first
 
 ```
 
@@ -60,7 +60,7 @@ RUN apt-get update && apt-get install -y \
 #### 4、Create the first sandbox image under the root directory of your project
 
 ```bash
-QWEN_SANDBOX=docker BUILD_SANDBOX=1 qwen -s
+QWEN_SANDBOX=docker BUILD_SANDBOX=1 qwen-custom -s
 # Observe whether the sandbox version of the tool you launched is consistent with the version of your custom image. If they are consistent, the startup will be successful
 ```
 
@@ -68,7 +68,7 @@ This builds a project-specific image based on the default sandbox image.
 
 #### Remove npm link
 
-- If you want to restore the official CLI of qwen, please remove the npm link
+- If you want to restore the official CLI command, please remove the npm link
 
 ```bash
 # Method 1: Unlink globally
@@ -79,13 +79,13 @@ cd packages/cli
 npm unlink
 
 # Verification has been lifted
-which qwen
-# It should display "qwen not found"
+which qwen-custom
+# It should display "qwen-custom not found"
 
 # Reinstall the global version if necessary
 npm install -g @qwen-code/qwen-code
 
 # Verification Recovery
-which qwen
-qwen --version
+which qwen-custom
+qwen-custom --version
 ```

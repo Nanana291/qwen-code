@@ -58,11 +58,11 @@ brew install qwen-code
 
 ## Step 2: Log in to your account
 
-Qwen Code requires an account to use. When you start an interactive session with the `qwen` command, you'll be prompted to log in:
+Qwen Code requires an account to use. When you start an interactive session with the `qwen-custom` command, you'll be prompted to log in:
 
 ```bash
 # You'll be prompted to log in on first use
-qwen
+qwen-custom
 ```
 
 ```bash
@@ -78,7 +78,7 @@ Select `Qwen OAuth`, log in to your account and follow the prompts to confirm. O
 
 > [!tip]
 >
-> You can also configure authentication directly from the terminal without starting a session by running `qwen auth`. Use `qwen auth status` to check your current configuration at any time. See the [Authentication](./configuration/auth) page for details.
+> You can also configure authentication directly from the terminal without starting a session by running `qwen-custom auth`. Use `qwen-custom auth status` to check your current configuration at any time. See the [Authentication](./configuration/auth) page for details.
 
 ## Step 3: Start your first session
 
@@ -87,8 +87,8 @@ Open your terminal in any project directory and start Qwen Code:
 ```bash
 # optiona
 cd /path/to/your/project
-# start qwen
-qwen
+# start qwen-custom
+qwen-custom
 ```
 
 You'll see the Qwen Code welcome screen with your session information, recent conversations, and latest updates. Type `/help` for available commands.
@@ -219,10 +219,10 @@ Here are the most important commands for daily use:
 
 | Command               | What it does                                     | Example                       |
 | --------------------- | ------------------------------------------------ | ----------------------------- |
-| `qwen`                | start Qwen Code                                  | `qwen`                        |
+| `qwen-custom`         | start Qwen Code                                  | `qwen-custom`                 |
 | `/auth`               | Change authentication method (in session)        | `/auth`                       |
-| `qwen auth`           | Configure authentication from the terminal       | `qwen auth`                   |
-| `qwen auth status`    | Check current authentication status              | `qwen auth status`            |
+| `qwen-custom auth`    | Configure authentication from the terminal       | `qwen-custom auth`            |
+| `qwen-custom auth status` | Check current authentication status          | `qwen-custom auth status`     |
 | `/help`               | Display help information for available commands  | `/help` or `/?`               |
 | `/compress`           | Replace chat history with summary to save Tokens | `/compress`                   |
 | `/clear`              | Clear terminal screen content                    | `/clear` (shortcut: `Ctrl+L`) |

@@ -442,9 +442,9 @@ install_qwen_code() {
         export PATH="${NPM_GLOBAL_BIN}:${PATH}"
     fi
 
-    if command_exists qwen; then
+    if command_exists qwen-custom; then
         local QWEN_VERSION
-        QWEN_VERSION=$(qwen --version 2>/dev/null || echo "unknown")
+        QWEN_VERSION=$(qwen-custom --version 2>/dev/null || echo "unknown")
         log_success "Qwen Code is already installed: ${QWEN_VERSION}"
         log_info "Upgrading to the latest version..."
     fi
@@ -461,9 +461,9 @@ install_qwen_code() {
         log_success "Qwen Code installed successfully!"
 
         # Verify installation
-        if command_exists qwen; then
+        if command_exists qwen-custom; then
             local qwen_version
-            qwen_version=$(qwen --version 2>/dev/null) || qwen_version="unknown"
+            qwen_version=$(qwen-custom --version 2>/dev/null) || qwen_version="unknown"
             log_info "Qwen Code version: ${qwen_version}"
         fi
     else
@@ -549,16 +549,16 @@ main() {
         export PATH="${NPM_GLOBAL_BIN}:${PATH}"
     fi
 
-    # Check if qwen is immediately available
-    if command_exists qwen; then
+    # Check if qwen-custom is immediately available
+    if command_exists qwen-custom; then
         log_success "Qwen Code is ready to use!"
         echo ""
-        echo "You can now run: qwen"
+        echo "You can now run: qwen-custom"
         echo ""
-        # Auto-start qwen
+        # Auto-start qwen-custom
         log_info "Starting Qwen Code..."
         echo ""
-        exec qwen
+        exec qwen-custom
     else
         log_warning "Qwen Code command not found in current session"
         echo ""
@@ -566,7 +566,7 @@ main() {
         echo "run the following command in your current shell:"
         echo "  eval \$(${0} --print-env)"
         echo ""
-        log_info "Or simply restart your terminal, then run: qwen"
+        log_info "Or simply restart your terminal, then run: qwen-custom"
     fi
 }
 
