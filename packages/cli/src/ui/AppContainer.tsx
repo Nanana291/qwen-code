@@ -75,11 +75,11 @@ import { VerboseModeProvider } from './contexts/VerboseModeContext.js';
 import { useTerminalSize } from './hooks/useTerminalSize.js';
 import { calculatePromptWidths } from './components/InputPrompt.js';
 import { useStdin, useStdout } from 'ink';
-import ansiEscapes from 'ansi-escapes';
 import * as fs from 'node:fs';
 import { basename } from 'node:path';
 import { computeWindowTitle } from '../utils/windowTitle.js';
 import { clearScreen } from '../utils/stdioHelpers.js';
+import { refreshStatic as refreshStaticView } from './utils/refreshStatic.js';
 import { useTextBuffer } from './components/shared/text-buffer.js';
 import { useLogger } from './hooks/useLogger.js';
 import { useGeminiStream } from './hooks/useGeminiStream.js';
@@ -436,10 +436,12 @@ export const AppContainer = (props: AppContainerProps) => {
     fetchUserMessages();
   }, [historyManager.history, logger]);
 
-  const refreshStatic = useCallback(() => {
-    stdout.write(ansiEscapes.clearTerminal);
-    setHistoryRemountKey((prev) => prev + 1);
-  }, [setHistoryRemountKey, stdout]);
+  const refreshStatic = useCallback(
+    (options?: { clearTerminal?: boolean }) => {
+      refreshStaticView(stdout, setHistoryRemountKey, options);
+    },
+    [setHistoryRemountKey, stdout],
+  );
 
   const {
     isThemeDialogOpen,
@@ -1320,7 +1322,9 @@ export const AppContainer = (props: AppContainerProps) => {
     }
 
     const handler = setTimeout(() => {
-      refreshStatic();
+      // Mobile terminals can resize when the keyboard shows/hides; keep the
+      // remount but avoid a full clear so Termux does not flash black.
+      refreshStatic({ clearTerminal: false });
     }, 300);
 
     return () => {

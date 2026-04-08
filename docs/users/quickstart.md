@@ -34,6 +34,10 @@ curl -fsSL -o %TEMP%\install-qwen.bat https://qwen-code-assets.oss-cn-hangzhou.a
 >
 > It's recommended to restart your terminal after installation to ensure environment variables take effect.
 
+> [!note]
+>
+> On Termux / Android, skip the shell installer and use the NPM install path below.
+
 ### Manual Installation
 
 **Prerequisites**

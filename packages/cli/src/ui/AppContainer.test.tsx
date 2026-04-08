@@ -964,6 +964,48 @@ describe('AppContainer State Management', () => {
     });
   });
 
+  describe('Terminal Refresh Behavior', () => {
+    const mockedUseTerminalSize = useTerminalSize as Mock;
+
+    beforeEach(() => {
+      vi.useFakeTimers();
+    });
+
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    it('does not clear the terminal when resizing the viewport', () => {
+      mockedUseTerminalSize.mockReturnValue({ columns: 80, rows: 24 });
+
+      const { rerender } = render(
+        <AppContainer
+          config={mockConfig}
+          settings={mockSettings}
+          version="1.0.0"
+          initializationResult={mockInitResult}
+        />,
+      );
+
+      expect(mockStdout.write).not.toHaveBeenCalled();
+
+      mockedUseTerminalSize.mockReturnValue({ columns: 81, rows: 24 });
+
+      rerender(
+        <AppContainer
+          config={mockConfig}
+          settings={mockSettings}
+          version="1.0.0"
+          initializationResult={mockInitResult}
+        />,
+      );
+
+      vi.advanceTimersByTime(350);
+
+      expect(mockStdout.write).not.toHaveBeenCalled();
+    });
+  });
+
   describe('Keyboard Input Handling', () => {
     it('should block quit command during authentication', () => {
       mockedUseAuthCommand.mockReturnValue({
